@@ -1236,11 +1236,15 @@ When a metal reacts with a non-metal, electrons are **transferred** from the met
 - Mg (2, 8, 2) loses 2 electrons → Mg²⁺.
 - Each Cl (2, 8, 7) gains 1 electron → Cl⁻. Two chlorine atoms are needed to accept the two electrons lost by magnesium.
 
+::diagram:ionic-covalent-formation
+
 ### Properties of Ionic Compounds
 1. **Physical nature** — solid and generally hard and brittle (due to strong forces of attraction between ions).
 2. **Melting and boiling points** — high, because a considerable amount of energy is required to break the strong inter-ionic attraction.
 3. **Solubility** — generally soluble in water, insoluble in solvents like kerosene and petrol.
 4. **Conduction of electricity** — ionic compounds conduct electricity in the **molten state or in aqueous solution** (the ions become free to move), but **not in the solid state** (the ions are held in a rigid lattice and cannot move).
+
+::diagram:nacl-lattice
 
 ## Occurrence of Metals
 
@@ -1658,12 +1662,28 @@ Carbon has **4 electrons** in its outermost shell (electronic configuration 2, 4
 - **Methane (CH₄):** carbon shares one electron with each of 4 hydrogen atoms, forming 4 single covalent bonds.
 - **Carbon dioxide (CO₂):** carbon forms two double bonds with two oxygen atoms, O=C=O.
 
+::diagram:carbon-covalent-bonds
+
 ### Properties of Covalent (Molecular) Compounds
 1. Generally have **low melting and boiling points**, because the forces between molecules are weak.
 2. Generally **poor conductors** of electricity, since there are no free ions or electrons to carry charge.
 3. Many are **not soluble in water** but dissolve in organic solvents.
 
 ## Versatile Nature of Carbon
+
+### Allotropes of Carbon
+Carbon exists in several **allotropes** — different physical forms of the same element, in which the carbon atoms are bonded to one another in different ways.
+- **Diamond** — each carbon atom is bonded to **four** others by strong single covalent bonds, giving a rigid three-dimensional network in which every atom sits at the centre of a tetrahedron. It is the hardest natural substance, has a very high melting point and does not conduct electricity, because there are no free electrons.
+- **Graphite** — each carbon atom is bonded to **three** others in flat hexagonal layers. The layers are held together only by weak forces, so they slide over one another: graphite is soft and slippery (used in pencil 'leads' and as a lubricant). The fourth electron of every carbon atom is free to move along the layer, so graphite **conducts electricity**.
+- **Fullerenes** — hollow, cage-like molecules of carbon. The first to be discovered, **C-60** (buckminsterfullerene), has 60 carbon atoms arranged in 20 hexagons and 12 pentagons like a football; it is named after the architect Buckminster Fuller, whose geodesic domes have a similar shape.
+
+::diagram:carbon-allotropes
+
+::diagram:diamond-structure
+
+::diagram:graphite-structure
+
+::diagram:fullerene-c60
 
 ### 1. Catenation
 Carbon atoms can link with other carbon atoms through covalent bonds, forming **long chains, branched chains, or rings** of any length — this unique property is called **catenation**. Carbon–carbon bonds are very strong and stable, which is why so many carbon compounds are possible.
@@ -1687,6 +1707,8 @@ Carbon compounds may form:
 - **Straight chain compounds** — e.g. n-butane.
 - **Branched chain compounds** — e.g. iso-butane.
 - **Cyclic (ring) compounds** — e.g. cyclohexane, benzene.
+
+::diagram:benzene-structure
 
 ## Homologous Series
 

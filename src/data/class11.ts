@@ -174,6 +174,8 @@ The reliable digits in a measurement, plus the first uncertain digit, are its **
 
 **Formula mass** is used for ionic compounds, which do not exist as discrete molecules, e.g. the formula mass of NaCl = 23.0 + 35.5 = 58.5 u.
 
+::diagram:mass-spectrometer
+
 ## Mole Concept and Molar Masses
 
 Since atoms and molecules are extremely small, chemists count them in bulk using a unit called the **mole**.
@@ -555,6 +557,8 @@ James Chadwick discovered a neutral particle with a mass slightly greater than t
 
 ## Early Atomic Models
 
+::diagram:atomic-models
+
 ### Thomson's Model ("Plum Pudding" Model)
 An atom is a sphere of uniform positive charge, with electrons embedded in it like plums in a pudding — the positive and negative charges are equal, making the atom electrically neutral overall.
 
@@ -573,12 +577,18 @@ Rutherford directed a beam of **alpha particles** at a thin gold foil (the **gol
 
 **Limitation:** an electron moving in a circular orbit is continuously accelerating, and according to classical electromagnetic theory, an accelerating charged particle should continuously emit radiation, lose energy, and spiral into the nucleus — this would make atoms unstable, which contradicts reality.
 
+::diagram:rutherford-experiment
+
 ## Atomic Number, Mass Number and Isotopes
 
 - **Atomic number (Z)** = number of protons in the nucleus (also equals number of electrons in a neutral atom).
 - **Mass number (A)** = number of protons + number of neutrons.
 - **Isotopes** — atoms of the same element (same Z) with different mass numbers (different number of neutrons), e.g. ¹H, ²H (deuterium), ³H (tritium).
 - **Isobars** — atoms of different elements with the same mass number but different atomic numbers, e.g. ⁴⁰Ar and ⁴⁰Ca.
+
+::diagram:atom-structure
+
+::diagram:hydrogen-isotopes
 
 ## Bohr's Model of the Atom
 
@@ -592,6 +602,8 @@ Niels Bohr proposed a model that overcame the drawback of Rutherford's model, ba
 Bohr's model successfully explained the **line spectrum of the hydrogen atom**, where each line corresponds to an electron transitioning between two specific orbits.
 
 **Limitations of Bohr's model:** it could not explain the spectra of multi-electron atoms, the splitting of spectral lines in a magnetic field (Zeeman effect) or electric field (Stark effect), and it did not account for the wave nature of the electron.
+
+::diagram:bohr-model
 
 ## Dual Nature of Matter and Light
 
@@ -633,6 +645,8 @@ Four quantum numbers together specify the complete address of an electron in an 
 - **s-orbitals** are spherically symmetric, with size increasing as n increases (1s < 2s < 3s ...).
 - **p-orbitals** have a dumb-bell shape, with two lobes on either side of the nucleus; there are 3 p-orbitals per shell (pₓ, p_y, p_z), oriented along the three axes.
 - **d-orbitals** have more complex, generally cloverleaf shapes; there are 5 d-orbitals per shell.
+
+::diagram:orbital-shapes
 
 ## Rules for Filling Electrons in Orbitals
 
@@ -968,6 +982,8 @@ The long form of the periodic table has:
 | d-block | 3-12 | (n-1)d¹⁻¹⁰ ns⁰⁻² |
 | f-block | Lanthanoids, actinoids | (n-2)f¹⁻¹⁴ |
 
+::diagram:periodic-table-blocks
+
 ## Nomenclature of Elements with Atomic Numbers > 100
 
 For newly discovered elements before they are officially named, IUPAC uses a systematic naming method based on numerical roots (0 = nil, 1 = un, 2 = bi, 3 = tri, 4 = quad, 5 = pent, 6 = hex, 7 = sept, 8 = oct, 9 = enn), combined and ending in **-ium**. e.g. element 118 is temporarily "ununoctium" (Uuo) before being officially named Oganesson.
@@ -1300,6 +1316,8 @@ An ionic bond is formed by the **complete transfer of electrons** from a metal a
 
 **Example:** Na (2, 8, 1) loses 1 e⁻ → Na⁺ (2, 8); Cl (2, 8, 7) gains 1 e⁻ → Cl⁻ (2, 8, 8); Na⁺ and Cl⁻ combine to form NaCl.
 
+::diagram:ionic-covalent-formation
+
 ### Factors Favouring Ionic Bond Formation
 1. **Low ionisation enthalpy** of the metal (easy to lose electrons).
 2. **High (negative) electron gain enthalpy** of the non-metal (readily accepts electrons).
@@ -1310,6 +1328,8 @@ An ionic bond is formed by the **complete transfer of electrons** from a metal a
 - High melting and boiling points (strong electrostatic forces need lots of energy to overcome).
 - Soluble in polar solvents (like water); generally insoluble in non-polar solvents.
 - Conduct electricity in the molten state or in aqueous solution (mobile ions); do not conduct as solids.
+
+::diagram:nacl-lattice
 
 ## Covalent Bond
 
@@ -1344,6 +1364,8 @@ VSEPR theory predicts the **shape (geometry)** of a covalent molecule by assumin
 
 > [!example] Water (H₂O) has 4 electron pairs around oxygen (2 bond pairs, 2 lone pairs), so the basic arrangement is tetrahedral, but the shape of the molecule (based only on the atoms) is described as **bent/angular**, with a bond angle of about 104.5° — smaller than the ideal 109.5° because lone pairs repel more strongly than bond pairs.
 
+::diagram:vsepr-shapes
+
 ## Polarity of Bonds and Molecules
 
 ### Electronegativity and Bond Polarity
@@ -1366,6 +1388,8 @@ A polar bond has a **dipole moment**, μ = charge (Q) × distance between charge
 - **Sigma (σ) bond** — formed by head-on (axial) overlap of orbitals; allows free rotation around the bond axis.
 - **Pi (π) bond** — formed by sideways (lateral) overlap of unhybridised p-orbitals; restricts rotation and is generally weaker than a σ bond. A double bond = 1 σ + 1 π; a triple bond = 1 σ + 2 π.
 
+::diagram:sigma-pi-bonds
+
 ### Hybridisation
 Hybridisation is the **mixing of atomic orbitals of similar energy** on the same atom to form new, equivalent hybrid orbitals with a definite shape and orientation, used for stronger, more directional bonding.
 
@@ -1374,6 +1398,8 @@ Hybridisation is the **mixing of atomic orbitals of similar energy** on the same
 | sp | 1 s + 1 p | Linear (180°) | BeCl₂, C₂H₂ |
 | sp² | 1 s + 2 p | Trigonal planar (120°) | BF₃, C₂H₄ |
 | sp³ | 1 s + 3 p | Tetrahedral (109.5°) | CH₄, NH₃, H₂O |
+
+::diagram:hybridisation
 
 ## Molecular Orbital Theory (Brief Introduction)
 
@@ -1389,6 +1415,9 @@ A **hydrogen bond** is formed when hydrogen, covalently bonded to a highly elect
 - **Intramolecular hydrogen bonding** — within the same molecule, e.g. in ortho-nitrophenol.
 
 > [!key] Hydrogen bonding in water explains why ice is less dense than liquid water: in ice, each water molecule forms a rigid, open hydrogen-bonded lattice with 4 neighbours, which occupies more space than the more closely packed arrangement in liquid water — this is why ice floats.
+
+::diagram:hydrogen-bonding
+
     `,
     experiments: [
       {
@@ -1693,6 +1722,8 @@ p₁/T₁ = p₂/T₂  (at constant V, n)
 
 **Avogadro's Law:** equal volumes of all gases, under the same conditions of temperature and pressure, contain an equal number of molecules; V ∝ n (at constant T, p).
 
+::diagram:gas-law-graphs
+
 ### The Ideal Gas Equation
 Combining the four gas laws gives the **ideal gas equation**:
 
@@ -1713,6 +1744,10 @@ where x₁ is the mole fraction of gas 1.
 3. Particles are in **constant, random motion**, colliding with each other and with the walls of the container.
 4. Collisions are **perfectly elastic** — there is no net loss of kinetic energy during a collision.
 5. At any given temperature, the **average kinetic energy** of gas molecules is the same for all gases and is directly proportional to the absolute temperature.
+
+**Distribution of molecular speeds.** At any temperature the molecules of a gas do not all move at the same speed: collisions constantly redistribute energy, so there is a spread of speeds described by the Maxwell–Boltzmann distribution. Raising the temperature moves the peak (the most probable speed) to a higher value and flattens and widens the curve, while the total area — the number of molecules — stays the same.
+
+::diagram:maxwell-boltzmann
 
 ## Real Gases and Deviation from Ideal Behaviour
 
@@ -2399,6 +2434,8 @@ Kₚ = K꟤ × (RT)^Δng
 
 where Δn_g = (moles of gaseous products) − (moles of gaseous reactants).
 
+::diagram:equilibrium-graph
+
 ### Characteristics of the Equilibrium Constant
 1. The value of K is **constant at a given temperature**, regardless of the initial concentrations.
 2. K changes if the **temperature** changes.
@@ -2459,6 +2496,8 @@ pH = −log₁₀[H⁺]
 
 **pOH** is similarly defined as pOH = −log₁₀[OH⁻], and at 298 K, **pH + pOH = 14** (since Kw = 10⁻¹⁴, pKw = 14).
 
+::diagram:ph-scale
+
 ### Common Ion Effect
 The **common ion effect** is the suppression of the ionisation of a weak electrolyte by adding a strong electrolyte that shares a common ion. For example, adding sodium acetate (CH₃COONa, a strong electrolyte) to a solution of acetic acid (a weak acid) increases the concentration of the common acetate ion (CH₃COO⁻), which shifts the acetic acid's equilibrium backwards (by Le Chatelier's principle), suppressing its ionisation.
 
@@ -2469,6 +2508,8 @@ A **buffer solution** resists changes in pH when small amounts of acid or base a
 
 The pH of an acidic buffer is given by the **Henderson-Hasselbalch equation**:
 pH = pKa + log₁₀([salt] ÷ [acid])
+
+::diagram:titration-curve
 
 ## Solubility Equilibrium (Ksp)
 
@@ -2820,6 +2861,8 @@ A more general definition, applicable to reactions that don't involve oxygen or 
 - **Oxidising agent (oxidant)** — the species that gets reduced (it removes electrons from another substance).
 - **Reducing agent (reductant)** — the species that gets oxidised (it donates electrons to another substance).
 
+::diagram:redox
+
 ## Oxidation Number
 
 Since a purely electron-transfer view doesn't easily apply to covalent compounds, the concept of **oxidation number (oxidation state)** was introduced — an imaginary charge that an atom would have if all bonds to atoms of different elements were considered fully ionic.
@@ -2866,6 +2909,9 @@ Since a purely electron-transfer view doesn't easily apply to covalent compounds
 ## Redox Reactions as the Basis of Electrode Processes
 
 Redox reactions form the basis of **electrochemical cells**, where the oxidation and reduction half-reactions are physically separated at two electrodes, and electrons flow through an external circuit (producing electrical energy from a spontaneous chemical reaction) — this principle underlies batteries and electroplating, and is developed further in Electrochemistry.
+
+::diagram:galvanic-cell
+
     `,
     experiments: [
       {
@@ -3150,6 +3196,8 @@ Hydrogen has a single electron (1s¹) and can either lose it to form H⁺ (like 
 
 Hydrogen has three isotopes: **protium (¹H)**, **deuterium (²H or D)** and **tritium (³H or T, radioactive)**. All three have identical chemical properties (since chemical behaviour depends on electron configuration) but differ in physical properties due to the mass difference.
 
+::diagram:hydrogen-isotopes
+
 ## Preparation of Dihydrogen (H₂)
 
 **Laboratory preparation:** by the reaction of dilute acids with active metals like zinc.
@@ -3190,6 +3238,8 @@ Water is the most abundant and essential compound on Earth, and shows several un
 
 ### Structure of Water
 The water molecule has a bent (angular) shape with an H-O-H bond angle of about 104.5°, due to the oxygen atom's sp³ hybridisation with two lone pairs. This bent shape, together with the electronegativity difference between O and H, gives water molecules a permanent dipole moment, allowing extensive intermolecular hydrogen bonding.
+
+::diagram:hydrogen-bonding
 
 ### Physical Properties
 Because of hydrogen bonding, water has an unusually high melting point, boiling point, specific heat capacity, and surface tension compared to hydrides of other Group 16 elements (like H₂S, which is a gas at room temperature despite S being heavier than O).
@@ -3879,6 +3929,14 @@ Aluminium, the most abundant metal in the Earth's crust, is widely used because 
 - **Graphite** — each carbon atom is sp² hybridised and bonded to three others in flat, hexagonal layers; the layers are held together by weak van der Waals forces, allowing them to slide over one another, making graphite soft and slippery (used as a lubricant and in pencils); the delocalised electron in the unhybridised p-orbital allows graphite to conduct electricity.
 - **Fullerenes** — a form of carbon consisting of discrete, cage-like molecules (like C₆₀, "buckminsterfullerene," shaped like a football/soccer ball), the only pure, crystalline allotrope of carbon apart from diamond and graphite; each carbon is sp² hybridised.
 
+::diagram:carbon-allotropes
+
+::diagram:diamond-structure
+
+::diagram:graphite-structure
+
+::diagram:fullerene-c60
+
 ### Important Compounds
 
 **Carbon monoxide (CO)** is formed by the incomplete combustion of carbon/carbon compounds; it is highly toxic because it binds to haemoglobin nearly 300 times more strongly than oxygen does, preventing oxygen transport in blood.
@@ -4564,6 +4622,8 @@ Alkanes, general formula CₙH₂ₙ₊₂, are relatively unreactive ("paraffin
 
 Alkenes, general formula CₙH₂ₙ, contain one C=C double bond (sp² hybridised carbons); their characteristic reactions are **addition reactions**, since the π bond can be readily broken.
 
+::diagram:sigma-pi-bonds
+
 ### Preparation
 - **Dehydrohalogenation** of alkyl halides with alcoholic KOH (elimination of HX).
 - **Dehydration** of alcohols with conc. H₂SO₄ (elimination of H₂O).
@@ -4595,6 +4655,8 @@ Alkynes, general formula CₙH₂ₙ₋₂, contain one C≡C triple bond (sp hy
 Benzene (C₆H₆) is a planar, hexagonal ring of six sp² hybridised carbon atoms, each bonded to one hydrogen; the six unhybridised p-orbitals (one per carbon, each with one electron) overlap sideways to form a continuous, delocalised π electron cloud above and below the plane of the ring.
 
 **Hückel's rule** for aromaticity: a cyclic, planar, fully conjugated compound is aromatic if it contains (4n + 2) π electrons, where n = 0, 1, 2 ... Benzene has 6 π electrons (n = 1), satisfying this rule, which is a major reason for its exceptional stability (resonance/delocalisation energy).
+
+::diagram:benzene-structure
 
 ### Chemical Properties — Electrophilic Substitution
 Despite containing multiple bonds, benzene characteristically undergoes **substitution** reactions (not addition), since substitution preserves the highly stable aromatic ring system, whereas addition would destroy it.

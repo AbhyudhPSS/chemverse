@@ -1,4 +1,10 @@
-import type { ReactNode } from "react";
+import { Frame, ink, soft, line, arrowHead, box } from "./shared";
+import { carbonDiagrams } from "./carbon";
+import { atomDiagrams } from "./atoms";
+import { bondingDiagrams } from "./bonding";
+import { physicalDiagrams } from "./physical";
+import { matterDiagrams } from "./matter";
+import { biomoleculeDiagrams } from "./biomolecules";
 
 /* ------------------------------------------------------------------ *
  * Inline SVG diagrams for the Class 10 notes.
@@ -8,55 +14,6 @@ import type { ReactNode } from "react";
  * Colour is used to carry meaning — reaction type, pH, charge — never as
  * decoration.
  * ------------------------------------------------------------------ */
-
-const Frame = ({
-  children,
-  caption,
-  viewBox,
-}: {
-  children: ReactNode;
-  caption: string;
-  viewBox: string;
-}) => {
-  // Never scale a diagram *up* past its drawn size, or its type balloons and
-  // the set stops looking like one family. Narrow diagrams simply centre.
-  const intrinsicWidth = Number(viewBox.split(/\s+/)[2]) || undefined;
-
-  return (
-    <figure className="my-8">
-      <div className="overflow-x-auto rounded-lg border border-border bg-card p-4 sm:p-6">
-        <svg
-          viewBox={viewBox}
-          role="img"
-          className="mx-auto h-auto w-full"
-          style={intrinsicWidth ? { maxWidth: `${intrinsicWidth}px` } : undefined}
-        >
-          <title>{caption}</title>
-          {children}
-        </svg>
-      </div>
-      <figcaption className="mt-2.5 text-center text-xs text-muted-foreground">{caption}</figcaption>
-    </figure>
-  );
-};
-
-const ink = "hsl(var(--foreground))";
-const soft = "hsl(var(--muted-foreground))";
-const line = "hsl(var(--border))";
-
-/**
- * An arrowhead whose tip sits exactly at (x, y) and points along `angle`
- * (0° = right, 90° = down, −90° = up). Computing the rotation explicitly
- * keeps every arrow aimed along its line instead of relying on hand-placed
- * triangle vertices, which is where the earlier diagrams went wrong.
- */
-const arrowHead = (x: number, y: number, angle: number, fill: string, size = 9) => (
-  <path
-    d={`M0 0 L${-size} ${-size * 0.48} L${-size} ${size * 0.48} Z`}
-    fill={fill}
-    transform={`translate(${x}, ${y}) rotate(${angle})`}
-  />
-);
 
 /* ---------------------------- pH scale ---------------------------- */
 
@@ -101,10 +58,6 @@ export const PhScale = () => (
 );
 
 /* ------------------------ Types of reactions ---------------------- */
-
-const box = (x: number, y: number, w: number, h: number, fill: string, stroke: string) => (
-  <rect x={x} y={y} width={w} height={h} rx="4" fill={fill} stroke={stroke} strokeWidth="1.5" />
-);
 
 export const ReactionTypes = () => {
   const rows = [
@@ -751,134 +704,6 @@ export const StatesOfMatter = () => {
   );
 };
 
-/* -------------------- Interconversion of states --------------------- */
-
-export const InterconversionOfStates = () => {
-  const stateColour = "hsl(var(--cobalt))";
-  const nodes = [
-    { x: 80, label: "Solid" },
-    { x: 300, label: "Liquid" },
-    { x: 520, label: "Gas" },
-  ];
-
-  return (
-    <Frame caption="How matter changes state — the name of each change depends on its direction" viewBox="0 0 600 220">
-      {nodes.map((n) => (
-        <g key={n.label}>
-          <circle cx={n.x} cy={110} r={44} fill={`color-mix(in srgb, ${stateColour} 12%, transparent)`} stroke={stateColour} strokeWidth="2" />
-          <text x={n.x} y={116} textAnchor="middle" fontSize="15" fontWeight="600" fill={stateColour}>{n.label}</text>
-        </g>
-      ))}
-
-      {/* Solid <-> Liquid */}
-      <line x1={128} y1={98} x2={252} y2={98} stroke={soft} strokeWidth="1.5" />
-      {arrowHead(252, 98, 0, soft, 7)}
-      <text x={190} y={86} textAnchor="middle" fontSize="11" fill={soft}>Melting</text>
-      <line x1={252} y1={122} x2={128} y2={122} stroke={soft} strokeWidth="1.5" />
-      {arrowHead(128, 122, 180, soft, 7)}
-      <text x={190} y={142} textAnchor="middle" fontSize="11" fill={soft}>Freezing</text>
-
-      {/* Liquid <-> Gas */}
-      <line x1={348} y1={98} x2={472} y2={98} stroke={soft} strokeWidth="1.5" />
-      {arrowHead(472, 98, 0, soft, 7)}
-      <text x={410} y={86} textAnchor="middle" fontSize="11" fill={soft}>Boiling / evaporation</text>
-      <line x1={472} y1={122} x2={348} y2={122} stroke={soft} strokeWidth="1.5" />
-      {arrowHead(348, 122, 180, soft, 7)}
-      <text x={410} y={142} textAnchor="middle" fontSize="11" fill={soft}>Condensation</text>
-
-      {/* Solid <-> Gas, arcing above */}
-      <path d="M96 68 C 220 -10, 380 -10, 504 68" fill="none" stroke="hsl(var(--saffron))" strokeWidth="1.5" strokeDasharray="4 3" />
-      {arrowHead(504, 68, 42, "hsl(var(--saffron))", 7)}
-      <path d="M504 68 C 380 -10, 220 -10, 96 68" fill="none" stroke="hsl(var(--saffron))" strokeWidth="1.5" strokeDasharray="4 3" transform="translate(0, 18)" />
-      {arrowHead(96, 86, -138, "hsl(var(--saffron))", 7)}
-      <text x={300} y={20} textAnchor="middle" fontSize="11" fontWeight="600" fill="hsl(var(--saffron))">
-        Sublimation (solid → gas) · Deposition (gas → solid)
-      </text>
-
-      <text x={300} y={200} textAnchor="middle" fontSize="11" fill={soft}>
-        Heating drives changes to the right; cooling drives changes to the left
-      </text>
-    </Frame>
-  );
-};
-
-/* ---------------------------- Tyndall effect -------------------------- */
-
-export const TyndallEffect = () => {
-  const panel = (x: number, title: string, scattered: boolean, colour: string) => (
-    <g transform={`translate(${x}, 0)`}>
-      <text x={120} y={18} textAnchor="middle" fontSize="13.5" fontWeight="600" fill={colour}>{title}</text>
-      <rect x={30} y={34} width={180} height={150} rx="6" fill={`color-mix(in srgb, ${colour} 10%, transparent)`} stroke={line} strokeWidth="1.5" />
-
-      {/* Torch */}
-      <rect x={-6} y={98} width={26} height={20} rx="2" fill={soft} />
-      <text x={7} y={132} textAnchor="middle" fontSize="9.5" fill={soft}>Light</text>
-
-      {scattered ? (
-        <>
-          <line x1={20} y1={108} x2={210} y2={108} stroke={colour} strokeWidth="3" opacity="0.85" />
-          {Array.from({ length: 5 }, (_, i) => {
-            const cx = 60 + i * 32;
-            return <circle key={i} cx={cx} cy={108} r={16} fill="none" stroke={colour} strokeWidth="1.2" opacity="0.55" />;
-          })}
-          <text x={120} y={200} textAnchor="middle" fontSize="11" fontWeight="600" fill={colour}>Path of light is visible</text>
-        </>
-      ) : (
-        <>
-          <line x1={20} y1={108} x2={210} y2={108} stroke={colour} strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
-          <text x={120} y={200} textAnchor="middle" fontSize="11" fontWeight="600" fill={colour}>Path of light is invisible</text>
-        </>
-      )}
-    </g>
-  );
-
-  return (
-    <Frame caption="The Tyndall effect — colloidal particles scatter light; the particles in a true solution are too small to" viewBox="0 0 480 220">
-      {panel(0, "True solution", false, "hsl(var(--cobalt))")}
-      {panel(240, "Colloid", true, "hsl(var(--saffron))")}
-    </Frame>
-  );
-};
-
-/* --------------------------- Separating funnel ------------------------ */
-
-export const SeparatingFunnel = () => (
-  <Frame caption="A separating funnel — the denser liquid is drained off first, through the stopcock at the bottom" viewBox="0 0 320 340">
-    {/* Stand + clamp (simple) */}
-    <line x1={20} y1={20} x2={20} y2={320} stroke={soft} strokeWidth="3" />
-    <line x1={20} y1={60} x2={70} y2={60} stroke={soft} strokeWidth="3" />
-
-    {/* Funnel body: cylindrical top, conical bottom */}
-    <path
-      d="M100 30 H220 V150 L160 250 L100 150 Z"
-      fill="none"
-      stroke={line}
-      strokeWidth="2"
-    />
-    {/* Oil layer (top, less dense) */}
-    <path d="M102 60 H218 V150 L163 205 H157 L102 150 Z" fill="hsl(var(--saffron) / 0.4)" />
-    {/* Water layer (bottom, denser) */}
-    <path d="M102 150 H218 V150 L160 248 L102 150 Z" fill="hsl(var(--cobalt) / 0.4)" />
-
-    <text x={252} y={95} fontSize="12" fill="hsl(var(--saffron))" fontWeight="600">Oil</text>
-    <text x={252} y={112} fontSize="10" fill={soft}>(less dense)</text>
-    <text x={252} y={190} fontSize="12" fill="hsl(var(--cobalt))" fontWeight="600">Water</text>
-    <text x={252} y={207} fontSize="10" fill={soft}>(denser)</text>
-
-    {/* Stopper */}
-    <rect x={148} y={16} width={24} height={16} rx="2" fill="hsl(var(--muted))" stroke={line} strokeWidth="1.5" />
-
-    {/* Stem + stopcock */}
-    <rect x={152} y={250} width={16} height={40} fill="hsl(var(--background))" stroke={line} strokeWidth="2" />
-    <rect x={144} y={262} width={32} height={14} rx="3" fill="hsl(var(--muted))" stroke={soft} strokeWidth="1.5" />
-    <text x={200} y={271} fontSize="11" fill={soft}>Stopcock</text>
-    <line x1={160} y1={290} x2={160} y2={312} stroke={line} strokeWidth="2" />
-
-    {/* Receiving beaker */}
-    <path d="M120 312 H200 V326 a6 6 0 0 1 -6 6 H126 a6 6 0 0 1 -6 -6 Z" fill="none" stroke={line} strokeWidth="2" />
-  </Frame>
-);
-
 /* ------------------------------ Bohr model ----------------------------- */
 
 export const BohrModel = () => {
@@ -925,87 +750,6 @@ export const BohrModel = () => {
   );
 };
 
-/* ---------------------------- Galvanic cell ---------------------------- */
-
-export const GalvanicCell = () => {
-  const zincColour = "hsl(var(--saffron))";
-  const copperColour = "hsl(var(--copper))";
-
-  return (
-    <Frame
-      caption="A zinc–copper galvanic (Daniell) cell — oxidation at the zinc anode, reduction at the copper cathode"
-      viewBox="0 0 560 300"
-    >
-      {/* Two beakers */}
-      {[
-        { x: 30, colour: zincColour, metal: "Zn", solution: "ZnSO₄(aq)", role: "Anode (−)", half: "Zn → Zn²⁺ + 2e⁻" },
-        { x: 330, colour: copperColour, metal: "Cu", solution: "CuSO₄(aq)", role: "Cathode (+)", half: "Cu²⁺ + 2e⁻ → Cu" },
-      ].map((b) => (
-        <g key={b.metal}>
-          <path
-            d={`M${b.x} 90 H${b.x + 200} V${222} a14 14 0 0 1 -14 14 H${b.x + 14} a14 14 0 0 1 -14 -14 Z`}
-            fill={`color-mix(in srgb, ${b.colour} 8%, transparent)`}
-            stroke={line}
-            strokeWidth="2"
-          />
-          <line x1={b.x} y1={140} x2={b.x + 200} y2={140} stroke={`color-mix(in srgb, ${b.colour} 35%, transparent)`} strokeWidth="1.5" />
-          <rect x={b.x + 90} y={60} width={20} height={130} rx="2" fill={`color-mix(in srgb, ${b.colour} 55%, transparent)`} stroke={b.colour} strokeWidth="2" />
-          <text x={b.x + 100} y={50} textAnchor="middle" fontSize="13" fontWeight="600" fill={b.colour}>{b.metal}</text>
-          <text x={b.x + 100} y={240} textAnchor="middle" fontSize="11.5" fill={soft}>{b.solution}</text>
-          <text x={b.x + 100} y={256} textAnchor="middle" fontSize="11" fontWeight="600" fill={b.colour}>{b.role}</text>
-          <text x={b.x + 100} y={280} textAnchor="middle" fontSize="10.5" fontFamily="ui-monospace, monospace" fill={ink}>{b.half}</text>
-        </g>
-      ))}
-
-      {/* Salt bridge */}
-      <path d="M180 100 C 220 40, 340 40, 380 100" fill="none" stroke={soft} strokeWidth="10" strokeLinecap="round" />
-      <path d="M180 100 C 220 40, 340 40, 380 100" fill="none" stroke="hsl(var(--background))" strokeWidth="6" strokeLinecap="round" />
-      <text x={280} y={34} textAnchor="middle" fontSize="11" fill={soft}>Salt bridge</text>
-      <text x={280} y={70} textAnchor="middle" fontSize="10" fill={soft}>Anions ← · → Cations</text>
-
-      {/* External wire + voltmeter */}
-      <polyline points="130,60 130,20 430,20 430,60" fill="none" stroke={ink} strokeWidth="1.5" />
-      <circle cx={280} cy={20} r={16} fill="hsl(var(--background))" stroke={ink} strokeWidth="1.5" />
-      <text x={280} y={25} textAnchor="middle" fontSize="12" fill={ink}>V</text>
-      {arrowHead(180, 20, 0, "hsl(var(--cobalt))", 7)}
-      <text x={200} y={10} textAnchor="middle" fontSize="10.5" fill="hsl(var(--cobalt))">e⁻ flow (anode → cathode)</text>
-    </Frame>
-  );
-};
-
-/* ---------------------------- Titration curve --------------------------- */
-
-export const TitrationCurve = () => {
-  const colour = "hsl(var(--cobalt))";
-  return (
-    <Frame caption="Titration curve for a strong acid titrated with a strong base — pH rises sharply at the equivalence point" viewBox="0 0 480 300">
-      <line x1={50} y1={30} x2={50} y2={250} stroke={line} strokeWidth="1.5" />
-      <line x1={50} y1={250} x2={440} y2={250} stroke={line} strokeWidth="1.5" />
-      <text x={20} y={140} textAnchor="middle" fontSize="12" fill={soft} transform="rotate(-90, 20, 140)">pH</text>
-      <text x={245} y={278} textAnchor="middle" fontSize="12" fill={soft}>Volume of base added (mL)</text>
-
-      <path
-        d="M60 232 C 150 226, 210 216, 230 180 C 245 150, 235 70, 240 50 C 250 42, 320 40, 420 38"
-        fill="none"
-        stroke={colour}
-        strokeWidth="2.5"
-      />
-
-      {/* Equivalence point */}
-      <line x1={238} y1={38} x2={238} y2={250} stroke="hsl(var(--crimson))" strokeWidth="1.5" strokeDasharray="4 3" />
-      <circle cx={238} cy={118} r="4.5" fill="hsl(var(--crimson))" />
-      <text x={248} y={122} fontSize="11" fontWeight="600" fill="hsl(var(--crimson))">Equivalence point (pH = 7)</text>
-
-      {/* Half-equivalence */}
-      <line x1={150} y1={228} x2={150} y2={250} stroke="hsl(var(--viridian))" strokeWidth="1.5" strokeDasharray="3 3" />
-      <text x={150} y={266} textAnchor="middle" fontSize="10.5" fill="hsl(var(--viridian))">Half-equivalence</text>
-
-      <text x={60} y={22} fontSize="11" fill={soft}>Starts acidic</text>
-      <text x={420} y={30} textAnchor="end" fontSize="11" fill={soft}>Flattens, excess base</text>
-    </Frame>
-  );
-};
-
 /* ----------------------------- Heating curve ----------------------------- */
 
 export const HeatingCurve = () => {
@@ -1042,39 +786,6 @@ export const HeatingCurve = () => {
           {s.label}
         </text>
       ))}
-    </Frame>
-  );
-};
-
-/* -------------------------- Maxwell-Boltzmann -------------------------- */
-
-export const MaxwellBoltzmann = () => {
-  const curve = (peak: number, height: number, colour: string) => {
-    const pts: string[] = [];
-    for (let x = 0; x <= 400; x += 8) {
-      const t = x / 400;
-      const y = height * Math.pow(t, 2.1) * Math.exp(-((x - peak) * (x - peak)) / (2 * 95 * 95)) * 2.3;
-      pts.push(`${30 + x},${220 - y}`);
-    }
-    return <polyline points={pts.join(" ")} fill="none" stroke={colour} strokeWidth="2.5" />;
-  };
-
-  return (
-    <Frame caption="Maxwell–Boltzmann distribution — at a higher temperature, more molecules have energy above Ea" viewBox="0 0 470 260">
-      <line x1={30} y1={20} x2={30} y2={220} stroke={line} strokeWidth="1.5" />
-      <line x1={30} y1={220} x2={440} y2={220} stroke={line} strokeWidth="1.5" />
-      <text x={10} y={120} textAnchor="middle" fontSize="12" fill={soft} transform="rotate(-90, 10, 120)">Fraction of molecules</text>
-      <text x={235} y={244} textAnchor="middle" fontSize="12" fill={soft}>Kinetic energy →</text>
-
-      {curve(130, 95, "hsl(var(--cobalt))")}
-      {curve(190, 70, "hsl(var(--crimson))")}
-
-      <text x={95} y={70} fontSize="11" fontWeight="600" fill="hsl(var(--cobalt))">Lower T</text>
-      <text x={270} y={90} fontSize="11" fontWeight="600" fill="hsl(var(--crimson))">Higher T</text>
-
-      <line x1={300} y1={20} x2={300} y2={220} stroke="hsl(var(--saffron))" strokeWidth="1.5" strokeDasharray="4 3" />
-      <text x={300} y={12} textAnchor="middle" fontSize="11" fontWeight="600" fill="hsl(var(--saffron))">Eₐ</text>
-      <text x={370} y={205} textAnchor="middle" fontSize="10" fill={soft}>Molecules past Eₐ can react</text>
     </Frame>
   );
 };
@@ -1126,104 +837,15 @@ export const OrbitalDiagram = () => {
   );
 };
 
-/* --------------------------- Mass spectrometer --------------------------- */
-
-export const MassSpectrometer = () => {
-  const stages = [
-    { label: "Vaporise", note: "Sample → gas" },
-    { label: "Ionise", note: "Electron knocked off" },
-    { label: "Accelerate", note: "Electric field" },
-    { label: "Deflect", note: "Magnetic field, by mass" },
-    { label: "Detect", note: "Signal ∝ abundance" },
-  ];
-
-  return (
-    <Frame caption="Mass spectrometer, schematically — lighter ions deflect more and reach the detector sooner" viewBox="0 0 560 160">
-      {stages.map((s, i) => {
-        const x = 10 + i * 112;
-        return (
-          <g key={s.label}>
-            {box(x, 40, 92, 56, "hsl(var(--cobalt) / 0.08)", "hsl(var(--cobalt))")}
-            <text x={x + 46} y={64} textAnchor="middle" fontSize="12.5" fontWeight="600" fill="hsl(var(--cobalt))">{s.label}</text>
-            <text x={x + 46} y={82} textAnchor="middle" fontSize="9.5" fill={soft}>{s.note}</text>
-            {i < stages.length - 1 && (
-              <>
-                <line x1={x + 92} y1={68} x2={x + 110} y2={68} stroke={soft} strokeWidth="1.5" />
-                {arrowHead(x + 110, 68, 0, soft, 6)}
-              </>
-            )}
-          </g>
-        );
-      })}
-      <text x={280} y={130} textAnchor="middle" fontSize="11" fill={soft}>
-        Path curvature depends on the ion's mass-to-charge ratio, m/z
-      </text>
-    </Frame>
-  );
-};
-
-/* ------------------------ Reaction mechanism energy ----------------------- */
-
-export const MechanismEnergyDiagram = () => (
-  <Frame caption="A two-step mechanism — the higher hump is the rate-determining step" viewBox="0 0 480 240">
-    <line x1={30} y1={20} x2={30} y2={200} stroke={line} strokeWidth="1.5" />
-    <line x1={30} y1={200} x2={450} y2={200} stroke={line} strokeWidth="1.5" />
-    <text x={12} y={110} textAnchor="middle" fontSize="12" fill={soft} transform="rotate(-90, 12, 110)">Energy</text>
-    <text x={240} y={224} textAnchor="middle" fontSize="12" fill={soft}>Reaction progress →</text>
-
-    <path
-      d="M50 160 C 90 160, 110 60, 150 60 C 180 60, 190 120, 220 120 C 250 120, 270 40, 310 40 C 340 40, 360 100, 420 100"
-      fill="none"
-      stroke="hsl(var(--cobalt))"
-      strokeWidth="2.5"
-    />
-
-    <text x={50} y={178} fontSize="10.5" fill={soft}>Reactants</text>
-    <text x={220} y={140} textAnchor="middle" fontSize="10.5" fill={soft}>Intermediate</text>
-    <text x={400} y={118} textAnchor="middle" fontSize="10.5" fill={soft}>Products</text>
-
-    <text x={150} y={48} textAnchor="middle" fontSize="10" fontWeight="600" fill="hsl(var(--crimson))">Eₐ₁ (slow, RDS)</text>
-    <text x={310} y={28} textAnchor="middle" fontSize="10" fontWeight="600" fill="hsl(var(--viridian))">Eₐ₂ (fast)</text>
-  </Frame>
-);
-
-/* ----------------------- Ionic vs covalent formation ---------------------- */
-
-export const IonicCovalentFormation = () => (
-  <Frame caption="Forming a bond — ionic bonds transfer electrons; covalent bonds share them" viewBox="0 0 560 220">
-    {/* Ionic */}
-    <g>
-      <text x={130} y={20} textAnchor="middle" fontSize="13" fontWeight="600" fill="hsl(var(--saffron))">Ionic — electron transfer</text>
-      <circle cx={70} cy={100} r={26} fill="hsl(var(--saffron) / 0.18)" stroke="hsl(var(--saffron))" strokeWidth="1.5" />
-      <text x={70} y={105} textAnchor="middle" fontSize="13" fontWeight="600" fill="hsl(var(--saffron))">Na</text>
-      <circle cx={190} cy={100} r={26} fill="hsl(var(--cobalt) / 0.18)" stroke="hsl(var(--cobalt))" strokeWidth="1.5" />
-      <text x={190} y={105} textAnchor="middle" fontSize="13" fontWeight="600" fill="hsl(var(--cobalt))">Cl</text>
-      <path d="M92 90 C 120 70, 150 70, 170 90" fill="none" stroke={soft} strokeWidth="1.5" />
-      {arrowHead(170, 90, 42, soft, 6)}
-      <text x={40} y={150} fontSize="11" fontWeight="600" fill="hsl(var(--saffron))">Na⁺</text>
-      <text x={210} y={150} fontSize="11" fontWeight="600" fill="hsl(var(--cobalt))">Cl⁻</text>
-      <text x={130} y={186} textAnchor="middle" fontSize="10.5" fill={soft}>Held by electrostatic attraction</text>
-    </g>
-
-    <line x1={280} y1={10} x2={280} y2={210} stroke={line} strokeWidth="1" />
-
-    {/* Covalent */}
-    <g transform="translate(300, 0)">
-      <text x={130} y={20} textAnchor="middle" fontSize="13" fontWeight="600" fill="hsl(var(--viridian))">Covalent — electron sharing</text>
-      <circle cx={95} cy={100} r={30} fill="hsl(var(--viridian) / 0.12)" stroke="hsl(var(--viridian))" strokeWidth="1.5" />
-      <circle cx={155} cy={100} r={30} fill="hsl(var(--viridian) / 0.12)" stroke="hsl(var(--viridian))" strokeWidth="1.5" />
-      <text x={75} y={105} textAnchor="middle" fontSize="13" fontWeight="600" fill="hsl(var(--viridian))">Cl</text>
-      <text x={175} y={105} textAnchor="middle" fontSize="13" fontWeight="600" fill="hsl(var(--viridian))">Cl</text>
-      <circle cx={119} cy={96} r={3} fill={ink} />
-      <circle cx={131} cy={96} r={3} fill={ink} />
-      <text x={125} y={150} textAnchor="middle" fontSize="10.5" fill={soft}>Shared pair completes both octets</text>
-    </g>
-  </Frame>
-);
-
 /* --------------------------- Registry ----------------------------- */
 
 export const diagrams: Record<string, () => JSX.Element> = {
+  ...carbonDiagrams,
+  ...atomDiagrams,
+  ...bondingDiagrams,
+  ...physicalDiagrams,
+  ...matterDiagrams,
+  ...biomoleculeDiagrams,
   "ph-scale": PhScale,
   "reaction-types": ReactionTypes,
   "reactivity-series": ReactivitySeries,
@@ -1240,16 +862,7 @@ export const diagrams: Record<string, () => JSX.Element> = {
   micelle: Micelle,
   combustion: Combustion,
   "states-of-matter": StatesOfMatter,
-  "interconversion-of-states": InterconversionOfStates,
-  "tyndall-effect": TyndallEffect,
-  "separating-funnel": SeparatingFunnel,
   "bohr-model": BohrModel,
-  "galvanic-cell": GalvanicCell,
-  "titration-curve": TitrationCurve,
   "heating-curve": HeatingCurve,
-  "maxwell-boltzmann": MaxwellBoltzmann,
   "orbital-diagram": OrbitalDiagram,
-  "mass-spectrometer": MassSpectrometer,
-  "mechanism-energy-diagram": MechanismEnergyDiagram,
-  "ionic-covalent-formation": IonicCovalentFormation,
 };

@@ -527,6 +527,8 @@ Since the substances that constitute a mixture retain their individual propertie
 
 **Crystallisation** is superior to the simple technique of evaporation for separating a pure solid dissolved in a liquid mixture, because: (i) some substances decompose or, in the case of sugar, may get charred on strong heating during evaporation, (ii) evaporation to complete dryness cannot remove soluble impurities present in small quantities, and (iii) some solids get trapped in impurities if the solution is over-evaporated too fast.
 
+::diagram:simple-distillation
+
 ## Elements and Compounds
 
 **Elements** are the simplest form of pure substances, made up of only one type of particle (atoms of only one kind, or, in a few cases like sulphur, molecules made only of that one kind of atom); they cannot be broken down into simpler substances by ordinary chemical reactions.
@@ -867,6 +869,8 @@ An **ion** is a charged species — an atom or a group of atoms carrying a posit
 - An **anion** is a negatively charged ion, formed by the gain of one or more electrons, e.g. Cl⁻, O²⁻.
 - A **polyatomic ion** is a group of atoms that together carry a net charge, and behaves as a single unit in a chemical reaction, e.g. hydroxide (OH⁻), sulphate (SO₄²⁻), nitrate (NO₃⁻), carbonate (CO₃²⁻), ammonium (NH₄⁺).
 
+::diagram:ionic-covalent-formation
+
 ## Writing Chemical Formulae
 
 The **valency** of an element is a measure of its combining capacity, defined as the number of hydrogen atoms that one atom of the given element can combine with (or displace).
@@ -1199,6 +1203,8 @@ Based on these observations, Rutherford proposed a model of the atom, which had 
 
 **Drawback of Rutherford's model:** an electron revolving around the nucleus in a circular path is continuously accelerating, and according to the theory of electromagnetism, such an accelerating, charged particle would continuously radiate energy and spiral into the nucleus. This would make the atom highly unstable — but atoms are known to be stable, so Rutherford's model could not fully explain the stability of the atom.
 
+::diagram:rutherford-experiment
+
 ## Bohr's Model of the Atom
 
 Niels Bohr proposed an improved model, based on the following postulates:
@@ -1208,6 +1214,8 @@ Niels Bohr proposed an improved model, based on the following postulates:
 These orbits/shells are represented by the letters K, L, M, N, ... or the numbers n = 1, 2, 3, 4, ..., counting outward from the nucleus.
 
 ::diagram:bohr-model
+
+::diagram:atomic-models
 
 ## Distribution of Electrons in Different Shells (Orbits)
 
@@ -1236,6 +1244,11 @@ The electrons present in the outermost shell of an atom are known as the **valen
 > [!note] Isotopes of the same element have almost identical chemical properties (since chemical properties depend on the number of electrons/protons), but different physical properties (since physical properties often depend on mass). This similarity in chemical behaviour is exploited in some very important uses of isotopes, such as an isotope of uranium being used as a fuel in nuclear reactors, an isotope of cobalt being used in the treatment of cancer, and an isotope of iodine being used in the treatment of goitre.
 
 **Isobars** are atoms of different elements that have the same mass number, but different atomic numbers. e.g. calcium (atomic number 20) and argon (atomic number 18) both have a mass number of 40, so they are isobars.
+
+::diagram:atom-structure
+
+::diagram:hydrogen-isotopes
+
     `,
     experiments: [
       {

@@ -187,6 +187,8 @@ where C is the molar concentration of the solution.
 
 Osmotic pressure is the preferred colligative property for determining the molar mass of large molecules like polymers and proteins, since even a small concentration gives a conveniently measurable osmotic pressure (unlike the very small freezing point/boiling point changes such dilute solutions would produce).
 
+::diagram:osmosis
+
 ## Abnormal Molar Mass and the van't Hoff Factor
 
 If a solute **dissociates** in solution (e.g. an electrolyte like NaCl), the number of particles increases, and colligative properties are found to be **greater** than expected from the formula mass. If a solute **associates** (e.g. forms dimers, like acetic acid in benzene), the number of particles decreases, and colligative properties are found to be **smaller** than expected.
@@ -497,6 +499,8 @@ An **electrochemical (galvanic/voltaic) cell** converts the chemical energy of a
 **Cell representation (Daniell cell):** Zn(s) | ZnSO₄(aq) || CuSO₄(aq) | Cu(s), where a single vertical line represents a phase boundary and the double line represents the salt bridge.
 
 **Function of the salt bridge:** it completes the internal circuit, maintains electrical neutrality in both half-cells by allowing ion flow, and minimises the **liquid junction potential**.
+
+::diagram:galvanic-cell
 
 ## Electrode Potential and the Standard Hydrogen Electrode
 
@@ -887,6 +891,8 @@ The time required for the concentration of a reactant to reduce to half of its i
 - **Zero-order:** t½ = [A]₀/2k (depends on initial concentration).
 - **First-order:** t½ = 0.693/k (**independent of initial concentration** — a defining characteristic of first-order kinetics, e.g. radioactive decay).
 
+::diagram:reaction-order-graphs
+
 ## Pseudo First-Order Reactions
 
 A reaction that is intrinsically of higher order but behaves like a first-order reaction because one reactant is present in large excess (so its concentration barely changes and can be treated as approximately constant). Example: the acid-catalysed hydrolysis of an ester, where water is the solvent and present in huge excess: CH₃COOC₂H₅ + H₂O →[H⁺] CH₃COOH + C₂H₅OH, rate = k'[ester][water] ≈ k[ester] (since [water] is essentially constant).
@@ -913,6 +919,9 @@ Collision theory states that a chemical reaction occurs as a result of collision
 2. The molecules must be **correctly oriented** relative to each other at the moment of collision (proper orientation for the necessary bonds to break and form).
 
 A catalyst works by providing an alternative reaction pathway with a **lower activation energy**, so that a much larger fraction of collisions become successful, increasing the rate, without altering the overall thermodynamics (ΔH or ΔG) of the reaction, or the position of equilibrium.
+
+::diagram:maxwell-boltzmann
+
     `,
     experiments: [
       {
@@ -1220,6 +1229,8 @@ A catalyst works by providing an alternative reaction pathway with a **lower act
 **Transition elements** (d-block) are defined as elements whose atoms (in the ground state or in a common oxidation state) have an **incompletely filled d sub-shell**. They lie between the s-block and p-block, in Groups 3-12, and their general valence configuration is (n-1)d¹⁻¹⁰ns⁰⁻².
 
 **Inner transition elements (f-block)** are the **lanthanoids** (Ce to Lu, filling the 4f sub-shell) and **actinoids** (Th to Lr, filling the 5f sub-shell), shown separately below the main body of the periodic table.
+
+::diagram:periodic-table-blocks
 
 ## General Characteristics of Transition Elements
 
@@ -1551,6 +1562,8 @@ Alfred Werner proposed that metal atoms/ions show two types of valency: **primar
 - **Coordination sphere** — the central atom and the ligands directly attached to it, enclosed in square brackets, e.g. [Co(NH₃)₆]³⁺; ions outside the square brackets (counter ions) are called ionisation sphere ions.
 - **Homoleptic complex** — a complex in which the metal is bonded to only one kind of ligand (e.g. [Co(NH₃)₆]³⁺). **Heteroleptic complex** — a complex bonded to more than one kind of ligand (e.g. [Co(NH₃)₄Cl₂]⁺).
 
+::diagram:octahedral-complex
+
 ## IUPAC Nomenclature of Coordination Compounds
 
 **General rules:**
@@ -1595,6 +1608,8 @@ In an **octahedral field**, the five d-orbitals split into two energy levels: a 
 The relative strength of common ligands is summarised by the **spectrochemical series**: I⁻ < Br⁻ < Cl⁻ < F⁻ < H₂O < NH₃ < en < CN⁻ ≈ CO (weak field to strong field).
 
 CFT successfully explains the **colour** of complexes (as light is absorbed to promote an electron from t2g to eg, a d-d transition) and their **magnetic properties**, based on the number of unpaired electrons remaining after splitting.
+
+::diagram:crystal-field-splitting
 
 ## Importance and Applications of Coordination Compounds
 
@@ -3246,6 +3261,8 @@ Of the 20 or so amino acids commonly found in proteins, some cannot be synthesis
 - **Tertiary structure** — the overall three-dimensional shape of a single polypeptide chain, arising from the further folding of the secondary structure, stabilised by interactions between the amino acid side chains (hydrogen bonds, disulphide bridges, ionic and hydrophobic interactions); this overall 3D shape is essential for the protein's biological function.
 - **Quaternary structure** — the spatial arrangement of two or more separate polypeptide chains (subunits) relative to each other, in proteins made of more than one chain (e.g. haemoglobin, made of four subunits).
 
+::diagram:protein-structure
+
 ### Denaturation of Proteins
 When a protein's native, biologically active structure is disrupted by heat, changes in pH, or certain chemicals, its secondary and tertiary structure unfolds (while the primary structure, the sequence of amino acids, usually remains intact), causing the protein to lose its biological activity — this process is called **denaturation**. e.g. the coagulation of egg white on boiling, or the curdling of milk with acid.
 
@@ -3276,6 +3293,8 @@ Nucleic acids (**DNA**, deoxyribonucleic acid, and **RNA**, ribonucleic acid) ar
 
 ### Structure of DNA
 DNA typically exists as a **double helix**, with two complementary polynucleotide strands wound around each other, held together by **hydrogen bonding between specific, complementary base pairs**: adenine always pairs with thymine (A-T, via 2 hydrogen bonds), and guanine always pairs with cytosine (G-C, via 3 hydrogen bonds) — this specific, complementary base-pairing is the molecular basis for the accurate replication of genetic information and its faithful transmission from one generation to the next.
+
+::diagram:dna-double-helix
 
 ### Biological Functions
 DNA is the primary repository of genetic information (the hereditary material) in most organisms. RNA plays several key roles in reading this information and using it to synthesise proteins — messenger RNA (mRNA) carries the genetic code from DNA to the site of protein synthesis (the ribosome), transfer RNA (tRNA) brings the correct amino acid to the ribosome during translation, and ribosomal RNA (rRNA) is a structural and catalytic component of the ribosome itself.

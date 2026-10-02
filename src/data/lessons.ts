@@ -112,12 +112,18 @@ Rutherford's team fired fast, positively charged alpha particles at a sheet of g
 
 A uniform "pudding" of charge could never do that. Rutherford concluded that almost all of an atom's mass and *all* of its positive charge must be packed into a tiny, dense **nucleus**, with electrons occupying the largely empty space around it — the nuclear model that replaced Thomson's.
 
+::diagram:rutherford-experiment
+
 ### James Chadwick and the neutron (1932)
 The nucleus alone couldn't explain atomic mass — protons alone would make every nucleus far too light and far too repulsive (all that positive charge crammed together). Chadwick identified a third particle with about the same mass as a proton but **no charge**: the **neutron**. Neutrons add mass and help "dilute" the proton-proton repulsion that would otherwise blow the nucleus apart.
+
+::diagram:atomic-models
 
 ## Structure of an Atom
 
 Atoms consist of three types of subatomic particles:
+
+::diagram:atom-structure
 
 ### 1. Protons (p⁺)
 - **Location**: Nucleus (center)
@@ -152,6 +158,8 @@ The total number of protons + neutrons in the nucleus.
 Atoms of the same element with different numbers of neutrons. Mass spectrometry is used to determine isotopic abundance and average atomic mass.
 
 > **Isotope notation:** an isotope is written either as ᴬ_Z**X** (mass number top-left, atomic number bottom-left) or in "chem-speak" as **X-A**, e.g. carbon-14 is ¹⁴₆C, with 6 protons and 14 − 6 = 8 neutrons.
+
+::diagram:hydrogen-isotopes
 
 ### Average Atomic Mass — A Worked Example
 
@@ -321,6 +329,8 @@ Electrons occupy **shells** at increasing distances from the nucleus:
 ## Subshells (Orbitals)
 
 Each shell contains **subshells** of different shapes:
+
+::diagram:orbital-shapes
 
 ### s Orbital
 - Shape: Spherical
@@ -557,6 +567,8 @@ Ionic bonds form when electrons are **transferred** from one atom to another.
 
 ::diagram:ionic-covalent-formation
 
+::diagram:nacl-lattice
+
 ### Properties of Ionic Compounds
 | Property | Ionic Compounds |
 |----------|-----------------|
@@ -764,6 +776,8 @@ Electron groups (bonds and lone pairs) around a central atom **repel each other*
 | 5 | 0 | Trigonal bipyramidal | 90°/120° | PCl₅ |
 | 6 | 0 | Octahedral | 90° | SF₆ |
 
+::diagram:vsepr-shapes
+
 ## Hybridization
 
 Atomic orbitals combine to form **hybrid orbitals** for bonding:
@@ -774,11 +788,15 @@ Atomic orbitals combine to form **hybrid orbitals** for bonding:
 - **sp³d**: 5 hybrid orbitals → Trigonal bipyramidal
 - **sp³d²**: 6 hybrid orbitals → Octahedral
 
+::diagram:hybridisation
+
 ## Sigma and Pi Bonds
 
 Every covalent bond you've drawn as a single line is actually a specific type of orbital overlap:
 - **Sigma (σ) bond**: formed by *head-on* overlap of orbitals along the axis connecting the two nuclei. Every single bond is (at least) one σ bond, and it's the only bond present in a single bond. Atoms can rotate freely around a σ bond.
 - **Pi (π) bond**: formed by *sideways* overlap of unhybridized p-orbitals, above and below the bond axis. A double bond = 1 σ + 1 π; a triple bond = 1 σ + 2 π. Because rotating around the bond axis would have to break the sideways p-orbital overlap, **rotation around a double or triple bond is restricted** — this is why cis/trans (E/Z) isomers exist for double bonds but not single bonds.
+
+::diagram:sigma-pi-bonds
 
 ## A Glimpse of Molecular Orbital (MO) Theory
 
@@ -860,6 +878,8 @@ While intramolecular forces hold atoms together within molecules, **intermolecul
 - Requires: H bonded to **F, O, or N** (highly electronegative atoms)
 - Explains water's unusually high boiling point
 - Example: H₂O, NH₃, HF
+
+::diagram:hydrogen-bonding
 
 ### 4. Ion-Dipole Forces
 - Between an **ion** and a **polar molecule**
@@ -974,6 +994,8 @@ The behavior of gases is explained by these postulates:
 - **Charles's Law**: V₁/T₁ = V₂/T₂ (constant P, n)
 - **Avogadro's Law**: V₁/n₁ = V₂/n₂ (constant T, P)
 - **Dalton's Law**: P_total = P₁ + P₂ + P₃ + ...
+
+::diagram:gas-law-graphs
 
 ### Worked Example: Partial Pressure from Mole Fraction
 
@@ -1423,6 +1445,8 @@ Each integrated rate law is secretly a "y = mx + b" straight line *if you plot t
 
 Try plotting your data all three ways — whichever one comes out as a straight line tells you the order, and its slope hands you the rate constant k directly.
 
+::diagram:reaction-order-graphs
+
 ## Determining a Rate Law from Experimental Data (Method of Initial Rates)
 
 Given a table of initial concentrations and the initial rate measured for each, find the order with respect to each reactant by comparing trials where only *one* concentration changes at a time.
@@ -1802,6 +1826,8 @@ Equilibrium is reached when the **forward and reverse reactions occur at equal r
 For the reaction: aA + bB ⇌ cC + dD
 
 **K = [C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ**
+
+::diagram:equilibrium-graph
 
 ### Interpreting K
 - **K >> 1**: Product-favored (mostly products at equilibrium)
@@ -2401,6 +2427,8 @@ Beyond metals/nonmetals, the table is also divided by *which sub-shell is being 
 - **f-block** (the two rows usually printed below the main table, the **lanthanides and actinides**): filling an f sub-shell — very similar to each other in properties, since the f electrons being added are buried deep inside the atom and barely affect chemistry.
 
 ::diagram:periodic-trends
+
+::diagram:periodic-table-blocks
 
 ## Pro Tips 💡
 - Group number often = valence electrons (for main group elements)
