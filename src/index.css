@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   ChemVerse Design System — "Paper & Reagent"
+   -------------------------------------------------------------------------
+   An editorial, instrument-grade reading environment for chemistry.
+   Ink on warm paper, hairline rules, one cobalt accent, and a restrained
+   categorical palette used only where colour carries meaning (element
+   categories, reaction states, mark weights).
+   ========================================================================= */
+
+@layer base {
+  :root {
+    /* --- Surfaces & ink ------------------------------------------------ */
+    --background: 40 33% 98%;
+    --foreground: 24 10% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 12%;
+
+    --muted: 38 22% 95%;
+    --muted-foreground: 25 7% 42%;
+
+    --secondary: 38 22% 94%;
+    --secondary-foreground: 24 10% 18%;
+
+    --accent-muted: 226 70% 96%;
+    --accent-foreground: 226 70% 32%;
+
+    /* --- Primary (cobalt) ---------------------------------------------- */
+    --primary: 226 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --destructive: 2 68% 47%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* --- Lines & focus -------------------------------------------------- */
+    --border: 34 18% 88%;
+    --input: 34 18% 86%;
+    --ring: 226 70% 45%;
+
+    --radius: 0.5rem;
+
+    /* --- Categorical palette -------------------------------------------
+       Tuned to a common perceived chroma so no single hue shouts.
+       Legible as text on paper (>= 4.5:1 against --background).      */
+    --cobalt: 226 70% 45%;
+    --iris: 270 55% 48%;
+    --magenta: 330 62% 45%;
+    --cyanine: 190 78% 30%;
+    --viridian: 158 68% 28%;
+    --saffron: 38 85% 36%;
+    --copper: 22 75% 42%;
+    --crimson: 2 68% 47%;
+    --moss: 88 52% 28%;
+    --plum: 315 45% 40%;
+
+    /* --- Atom visualisation --------------------------------------------- */
+    --atom-background: 38 22% 96%;
+    --atom-proton: 2 68% 47%;
+    --atom-proton-foreground: 0 0% 100%;
+    --atom-neutron: 25 7% 40%;
+    --atom-neutron-foreground: 0 0% 100%;
+    --atom-electron: 226 70% 45%;
+    --atom-electron-glow: 226 70% 62%;
+    --atom-orbit: 34 18% 82%;
+
+    /* --- Sidebar (shadcn primitive) -------------------------------------- */
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 24 10% 18%;
+    --sidebar-primary: 226 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 38 22% 94%;
+    --sidebar-accent-foreground: 24 10% 18%;
+    --sidebar-border: 34 18% 88%;
+    --sidebar-ring: 226 70% 45%;
+
+    /* --- Motion ---------------------------------------------------------- */
+    --ease-out: cubic-bezier(0.2, 0, 0, 1);
+    --dur-fast: 140ms;
+    --dur: 200ms;
+  }
+
+  .dark {
+    --background: 26 10% 8%;
+    --foreground: 38 18% 93%;
+
+    --card: 26 9% 11%;
+    --card-foreground: 38 18% 93%;
+
+    --popover: 26 9% 12%;
+    --popover-foreground: 38 18% 93%;
+
+    --muted: 26 8% 16%;
+    --muted-foreground: 32 8% 63%;
+
+    --secondary: 26 8% 16%;
+    --secondary-foreground: 38 18% 93%;
+
+    --accent-muted: 226 45% 18%;
+    --accent-foreground: 222 90% 76%;
+
+    --primary: 222 88% 68%;
+    --primary-foreground: 26 20% 8%;
+
+    --destructive: 2 75% 62%;
+    --destructive-foreground: 26 20% 8%;
+
+    --border: 28 8% 20%;
+    --input: 28 8% 24%;
+    --ring: 222 88% 68%;
+
+    --cobalt: 222 88% 70%;
+    --iris: 268 85% 76%;
+    --magenta: 330 78% 70%;
+    --cyanine: 186 68% 56%;
+    --viridian: 154 58% 54%;
+    --saffron: 40 88% 62%;
+    --copper: 24 82% 63%;
+    --crimson: 2 78% 66%;
+    --moss: 88 45% 58%;
+    --plum: 315 55% 72%;
+
+    --atom-background: 26 10% 10%;
+    --atom-proton: 2 78% 62%;
+    --atom-proton-foreground: 0 0% 100%;
+    --atom-neutron: 32 8% 55%;
+    --atom-neutron-foreground: 0 0% 100%;
+    --atom-electron: 222 88% 70%;
+    --atom-electron-glow: 222 88% 80%;
+    --atom-orbit: 28 8% 26%;
+
+    --sidebar-background: 26 10% 10%;
+    --sidebar-foreground: 38 18% 93%;
+    --sidebar-primary: 222 88% 68%;
+    --sidebar-primary-foreground: 26 20% 8%;
+    --sidebar-accent: 26 8% 16%;
+    --sidebar-accent-foreground: 38 18% 93%;
+    --sidebar-border: 28 8% 20%;
+    --sidebar-ring: 222 88% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans, 'IBM Plex Sans'), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'cv05' 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Editorial display face — reserved for titles and numerals. */
+  .font-display {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  code,
+  kbd,
+  samp,
+  .font-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-feature-settings: 'zero' 1;
+  }
+
+  /* One consistent, always-visible focus treatment. */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.18);
+    color: hsl(var(--foreground));
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Hairline lab-paper grid. Used sparingly, only behind page mastheads. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Small-caps eyebrow label used above section headings. */
+  .eyebrow {
+    @apply font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-muted-foreground;
+  }
+
+  /* Comfortable measure for long-form reading. */
+  .measure {
+    max-width: 68ch;
+  }
+}
+
+/* --- Keyframes used by the atom visualisation --------------------------- */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes nucleus-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* --- Scrollbar ---------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border: 3px solid hsl(var(--background));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* --- Respect reduced-motion globally ------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================================
+   Glass surfaces
+   -------------------------------------------------------------------------
+   Reserved for layers that genuinely float over scrolling content — the
+   header, sticky tab bars, the audio player and the bench read-out. The
+   blur is paired with a saturation lift so the paper tone stays warm, and
+   a 1px inner highlight gives the edge a real sheet-of-glass reading.
+   Falls back to an opaque surface where backdrop-filter is unsupported.
+   ========================================================================= */
+@layer components {
+  .glass-panel {
+    background-color: hsl(var(--card) / 0.96);
+    border: 1px solid hsl(var(--border));
+    box-shadow:
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.55),
+      0 8px 28px -16px hsl(24 20% 8% / 0.22);
+  }
+
+  .glass-bar {
+    background-color: hsl(var(--background) / 0.96);
+    border-color: hsl(var(--border));
+  }
+
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass-panel {
+      background-color: hsl(var(--card) / 0.6);
+      -webkit-backdrop-filter: blur(16px) saturate(165%);
+      backdrop-filter: blur(16px) saturate(165%);
+    }
+
+    .glass-bar {
+      background-color: hsl(var(--background) / 0.62);
+      -webkit-backdrop-filter: blur(16px) saturate(165%);
+      backdrop-filter: blur(16px) saturate(165%);
+    }
+  }
+
+  .dark .glass-panel {
+    border-color: hsl(0 0% 100% / 0.09);
+    box-shadow:
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.07),
+      0 10px 32px -18px hsl(0 0% 0% / 0.7);
+  }
+
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .dark .glass-panel {
+      background-color: hsl(var(--card) / 0.55);
+    }
+
+    .dark .glass-bar {
+      background-color: hsl(var(--background) / 0.6);
+    }
+  }
+}

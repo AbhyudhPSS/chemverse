@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ChemVerse">
+  <rect width="64" height="64" rx="12" fill="#FCFAF7"/>
+  <rect x="4.5" y="4.5" width="55" height="55" rx="9" fill="none" stroke="#1F1C19" stroke-opacity="0.18" stroke-width="2"/>
+  <text x="12" y="24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#6B625A">06</text>
+  <text x="11" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#1F1C19">Cv</text>
+</svg>
